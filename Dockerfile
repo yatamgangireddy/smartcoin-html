@@ -1,5 +1,6 @@
-FROM python:3
-WORKDIR /usr/src/app
+FROM python:3.8-slim-buster
+WORKDIR /app
+COPY . /app
 RUN pip install -r requirements.txt
-COPY . .
-CMD [ "python", "./test.py" ]
+EXPOSE 5000
+CMD ["python3","app.py"]
